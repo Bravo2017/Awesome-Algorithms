@@ -1,25 +1,22 @@
-#!/bin/python
+#!/bin/python3
 
 import sys
 
-s = raw_input().strip()
-t = raw_input().strip()
-k = int(raw_input().strip())
+
+s = input().strip()
+t = input().strip()
+k = int(input().strip())
 
 n = len(s)
-count = 0;
 commonlen=''
 
 while n>0:
     if (s[:n] == t[:n]):
-        s1 = s[:n]
-        commonlen = len(s1)
+        commonlen = s[:n]
         break
     n = n-1
 
-count = count + len(t[-(len(t)-len(s1)):])
-
-if (len(s)+len(t)-commonlen)<0 or (len(s)+len(t)-2*commonlen)%2==k%2:
-    print 'Yes'
+if k >= len(s)+len(t) or k>= len(s)+len(t)-(2*len(commonlen)) and (k-len(s)-len(t))%2==0:
+    print ('Yes')
 else:
-    print 'No'
+    print ('No')
