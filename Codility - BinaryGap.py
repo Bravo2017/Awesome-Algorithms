@@ -11,7 +11,7 @@ def binary(n, b):
 
 def solution(N):
     '''Calculates the number of 0s between two 1s. For example: returns 2 for number 9 as binary of 9 is 1001.
-    Returns 2 for number 9 as binary of 9 is 1001'''
+    Returns 4 for 541 as max binary gap is 4 in 541 (1000011101). Returns 0 as binary gap for 15 (1111)'''
     if N <= 0:
         return 0
     b = binary(N, b='')
