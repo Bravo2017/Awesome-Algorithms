@@ -2,6 +2,7 @@
 # @author: jubinsoni
 
 def binary(n, b):
+    '''Retruns binary b of a positive integer n'''
     if n <= 0:
         return b
     b = str(n % 2) + b
@@ -9,10 +10,13 @@ def binary(n, b):
 
 
 def solution(N):
+    '''Calculates the number of 0s between two 1s. For example: returns 2 for number 9 as binary of 9 is 1001.
+    Returns 2 for number 9 as binary of 9 is 1001'''
+    if N <= 0:
+        return 0
     b = binary(N, b='')
-    binary_gap = -1
+    binary_gap = 0
     count = 0
-
     s = b[b.index('1') + 1:]
     for i in s:
         if i == '1':
@@ -29,18 +33,30 @@ def solution(N):
 
 def main():
     # Test case#1
-    N = 15
+    N = 9
     print(solution(N))
 
     # Test case#2
-    N = 541
+    N = 15
     print(solution(N))
 
     # Test case#3
-    N = 0
+    N = 541
     print(solution(N))
 
     # Test case#4
+    N = 0
+    print(solution(N))
+
+    # Test case#5
+    N = 1
+    print(solution(N))
+
+    # Test case#6
+    N = 1111111111131111114447777777777785566410024563368412
+    print(solution(N))
+
+    # Test case#7
     N = 241586698
     print(solution(N))
 
